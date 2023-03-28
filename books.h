@@ -92,10 +92,12 @@ void printBookListByPrice(Book *books, int size, int price)
     }
 }
 
-void removeBook(Book *books,int *size,Book book){
-books[*size] = book;
-*size = *size++;
-}
+
+    void removeBook(Book *books,int *size,Book book){
+        books[*size];
+        *size = *size++;
+    }
+
 
 void removeBook(Book *books, int *size, Book book)
 {
