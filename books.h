@@ -92,15 +92,15 @@ void printBookListByPrice(Book *books, int size, int price)
     }
 }
 
-void addBook(Book *books, int *size, Book book)
-{
-    books[*size] = book;
-    *size = *size + 1;
+void removeBook(Book *books,int *size,Book book){
+books[*size] = book;
+*size = *size++;
+
 }
 
 void removeBook(Book *books, int *size, Book book)
 {
-    for (int i = 0; i < *size; i++)
+    for (int i = 0 ; i < *size; i++)
     {
         if (strcmp(books[i].title, book.title) == 0)
         {
@@ -178,7 +178,6 @@ void writeFile(char *filename, Book *books, int size)
 }
 
 
-\\ add it 
 #endif
 
 
