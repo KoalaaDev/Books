@@ -70,17 +70,23 @@ void printBookListByPublisher(Book *books, int size, char *publisher)
 }
 
 void printBookListByYear(Book *books, int size, int year)
+
 {
     for (int i = 0; i < size; i++)
+    
     {
       if (books[i].year == year)
+        
         {
            
             printfBook(books[i]);
             
             printf("\n");
+        
         }
+    
     }
+
 }
 
 void printBookListByPrice(Book *books, int size, int price)
