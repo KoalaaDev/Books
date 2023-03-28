@@ -141,27 +141,25 @@ void ReadFile(char *filename, Book *books)
         return;
     }
     // parse file and create books
-    char line[100];
-    char *token;
-    while (fgets(line, 100, fp) != NULL)
-    {
-        token = strtok(line, ",");
-        strcpy(book.title, token);
-        token = strtok(NULL, ",");
-        strcpy(book.author, token);
-        token = strtok(NULL, ",");
-        strcpy(book.publisher, token);
-        token = strtok(NULL, ",");
-        book.year = atoi(token);
-        token = strtok(NULL, ",");
-        book.pages = atoi(token);
-        token = strtok(NULL, ",");
-        book.price = atoi(token);
-        int size = 0;
-        addBook(books, &size, book);
-    }
-    fclose(fp);
-}
+   char line[100];
+   char *token;
+   while (fgets(line, 100, fp) != NULL)
+   {
+    token = strtok(line, ",");
+    strcpy(book.title, token);
+    token = strtok(NULL, ",");
+    strcpy(book.author, token);
+    token = strtok(NULL, ",");
+    strcpy(book.publisher, token);
+    token = strtok(NULL, ",");
+    book.year = atoi(token);
+    token = strtok(NULL, ",");
+    book.pages = atoi(token);
+    token = strtok(NULL, ",");
+    book.price = atoi(token);
+    int size = 0;
+    addBook(books, &size, book);
+   }
 
 void writeFile(char *filename, Book *books, int size)
 {
