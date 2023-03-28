@@ -25,14 +25,14 @@ void removeBook(Book *books, int *size, Book book);
 Book createBook(char *title, char *author, char *publisher, int year, int pages, int price);
 void ReadFile(char *filename, Book *books);
 
-void printBook(Book book)
-{
-    printf("Title: %s \n", book.title);
-    printf("Author: %s \n", book.author);
-    printf("Publisher: %s \n", book.publisher);
-    printf("Year: %d \n", book.year);
-    printf("Pages: %d \n", book.pages);
-    printf("Price: %d \n", book.price);
+
+void printBook(Book book){
+    printf("Title : %s \n",book.title);
+    printf("Author : %s \n",book.author);
+    printf("Publisher : %s \n",book.publisher);
+    printf("Year : %d\n",book.year);
+    printf("Pages: %d\n",book.pages);
+    printf("Price : %d \n",book.price);
 }
 
 void printBookList(Book *books, int size)
