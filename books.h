@@ -178,6 +178,17 @@ void writeFile(char *filename, Book *books, int size)
     fclose(fp);
 }
 
+void writeBook(char *filename, Book book)
+{
+    writeFile(filename, &book, 1);
+}
+
+void addBook(Book *books, int *size, Book book)
+{
+    books[*size] = book;
+    *size = *size + 1;
+}
+
 
 #endif
 
