@@ -160,6 +160,7 @@ void ReadFile(char *filename, Book *books)
     int size = 0;
     addBook(books, &size, book);
    }
+}
 
 void writeFile(char *filename, Book *books, int size)
 {
