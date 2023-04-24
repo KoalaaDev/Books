@@ -20,14 +20,8 @@ void viewbook(Book book,int size)
     while(i != size)
     {
      
-printf("Title : %s \n",book.title);
-    printf("Author : %s \n",book.author);
-    printf("Publisher : %s \n",book.publisher);
-    printf("Year : %d\n",book.year);
-    printf("Pages: %d\n",book.pages);
-    printf("Price : %d \n",book.price);
-    printf("\n");
-      i++;
+        printBook(book);
+        i++;
     }
 }
 
