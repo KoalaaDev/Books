@@ -11,13 +11,13 @@
 
 void menu();
 void add_books();
-void view();
-void sort();
+void view(Book Books);
+void sort(Book Books);
 
 void menu(){
       while(1){
       int choice;
-      //Book books = ReadFile("books.txt");
+      Book books = ReadFile("books.txt");
       printf("1. Add books\n");
       printf("2. View books\n");
       printf("3. Sort books\n");
@@ -29,11 +29,11 @@ void menu(){
                add_books();
                break;
           case 2:
-                view();
+                view(books);
                break;
       
           case 3:
-               sort();
+               sort(books);
               break;
           case 4:
                exit(0);
@@ -68,7 +68,8 @@ void add_books(){
       }
 }
 
-void view(){
+void view(Book* Books){
+      int size = sizeof(Books) / sizeof(Book);
       while (1)
       {
             int choice;
@@ -79,7 +80,7 @@ void view(){
             switch (choice)
             {
             case 1:
-                  viewbook(Book,size);
+                  printBookList(Books, size);
                   break;
             case 2:
                   return;
@@ -89,7 +90,7 @@ void view(){
             }
       }
 }
-void sort()
+void sort(Book* Books)
 {
     while(1)
      {
@@ -106,7 +107,7 @@ void sort()
       scanf("%d",&choice);
        switch(choice){
           case 1 :
-           sortTitle(*books,n);
+           sortTitle(*Books,n);
           case 2 :
            sortAuthor();
           case 3 :
