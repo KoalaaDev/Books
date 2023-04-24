@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 void writeFile(char *filename, Book *books, int size);
-Book ReadFile(char *filename);
+Book* ReadFile(char *filename);
 void writeBook(char *filename, Book book);
 
 
@@ -16,7 +16,7 @@ void writeBook(char *filename, Book book)
 }
 
 
-Book ReadFile(char *filename)
+Book* ReadFile(char *filename)
 {
     FILE *fp;
     Book book;
@@ -25,11 +25,11 @@ Book ReadFile(char *filename)
     {
         printf("Error opening file %s \n", filename);
         exit(1);
-        return book;
     }
     // parse file and create books
    char line[100];
    char *token;
+   Book *books = (Book *)malloc(sizeof(Book));
    while (fgets(line, 100, fp) != NULL)
    {
     token = strtok(line, ",");
@@ -45,12 +45,13 @@ Book ReadFile(char *filename)
     token = strtok(NULL, ",");
     book.price = atoi(token);
     int size = 0;
-    Book *books = (Book *)malloc(sizeof(Book));
+    
     books[size] = book;
     size++;
    }
+   return books;
     fclose(fp);
-    return book;
+    
 }
 
 void writeFile(char *filename, Book *books, int size)
