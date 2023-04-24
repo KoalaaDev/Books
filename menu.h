@@ -80,7 +80,7 @@ void view(Book* Books){
             switch (choice)
             {
             case 1:
-                  printBookList(Books, size);
+                 viewbook(Books, size);
                   break;
             case 2:
                   return;
@@ -98,12 +98,12 @@ void sort(Book* Books)
 
     
     int choice;
-      printf("1.Sort by title");
-      printf("2.Sort by author");
-      printf("3.Sort by year");
-      printf("4.Sort by publisher");
-      printf("5.Sort by price");
-      printf("6.Exit");
+      printf("1.Sort by title\n");
+      printf("2.Sort by author\n");
+      printf("3.Sort by year\n");
+      printf("4.Sort by publisher\n");
+      printf("5.Sort by price\n");
+      printf("6.Exit\n");
       printf("Select : ");
       scanf("%d",&choice);
        switch(choice){
