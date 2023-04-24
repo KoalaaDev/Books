@@ -8,15 +8,19 @@
 #ifndef bookmenu_h
 #define bookmenu_h
 #include "addbook.h"
+#include "search.h"
+
+void bookMenu();
+
 void bookMenu()
 {
     int n, choice;
-    
+    char title[50];
     while(1){
         printf("\n\nBOOK MENU\n\n");
         printf("1. VIEW BOOK\n");
         printf("2. ADD BOOK\n");
-        printf("3. BACK TO MAIN MENU\n");
+        printf("3. SEARCH FOR BOOKS\n");
         printf("\nEnter your choice: ");
         scanf("%d",&choice);
         
@@ -30,7 +34,10 @@ void bookMenu()
                 break;
     
             case 3:
+                printf("Enter title : ");
+                scanf("%s",title);
                 
+                searchBook(title);
                 break;
 
             default:

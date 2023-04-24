@@ -21,9 +21,9 @@ void viewBooks() {
     // Read and print each book detail from the file
     char line[256];
     printf("Title\tAuthor\tPublisher\tYear\tPages\tPrice\n");
-    while (fgets(line, sizeof(line), fp)) {
+    while (fgets(line, sizeof(line),fp)) {
         char *token = strtok(line,",");
-        printf("%s\t", token);
+        printf("%s \t", token);
         while (token != NULL) {
             token = strtok(NULL,",");
             printf("  %s\t", token);

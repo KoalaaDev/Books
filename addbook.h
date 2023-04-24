@@ -43,7 +43,7 @@ void addBook() {
     }
 
     // Write the book details to the file
-    fprintf(fp, "%s,%s,%s,%d,%d,%d\n", title, author, publisher, year, pages, price);
+    fprintf(fp, "%s , %s , %s , %d , %d , %d \n", title, author, publisher, year, pages, price);
 
     // Close the file
     fclose(fp);
